@@ -1,0 +1,56 @@
+{
+  "sharedDir": "shared",
+  "dependenciesDir": "extern",
+  "info": {
+    "name": "ThinSaberCore",
+    "id": "thinsabercore",
+    "version": "1.0.0-alpha1",
+    "url": "https://github.com/MillzyDev/bsq-ThinSaberLite",
+    "additionalData": {
+      "overrideSoName": "libthinsabercore.so",
+      "cmake": true
+    }
+  },
+  "dependencies": [
+    {
+      "id": "beatsaber-hook",
+      "versionRange": "^3.8.0",
+      "additionalData": {
+        "extraFiles": [
+          "src/inline-hook"
+        ]
+      }
+    },
+    {
+      "id": "modloader",
+      "versionRange": "=1.2.3",
+      "additionalData": {}
+    }
+  ],
+  "workspace": {
+    "scripts": {
+      "build": [
+        "powershell ./scripts/build.ps1"
+      ],
+      "logcat": [
+        "powershell ./scripts/start-logging.ps1"
+      ],
+      "tomb": [
+        "powershell ./scripts/pull-tombstone.ps1"
+      ],
+      "qmod": [
+        "powershell ./scripts/build.ps1",
+        "powershell ./scripts/createqmod.ps1"
+      ],
+      "restart": [
+        "powershell ./scripts/restart-game.ps1"
+      ],
+      "copy": [
+        "powershell ./scripts/copy.ps1"
+      ],
+      "stack": [
+        "powershell ./scripts/ndk-stack.ps1"
+      ]
+    }
+  }
+}
